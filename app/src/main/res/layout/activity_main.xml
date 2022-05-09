@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.opengl.GLSurfaceView
+        android:visibility="gone"
+        android:id="@+id/gl_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+<!--    <androidx.camera.view.PreviewView-->
+<!--        android:visibility="gone"-->
+<!--        android:id="@+id/pvv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <com.zdh.mooseopengl.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RadioGroup
+        app:layout_constraintBottom_toTopOf="@id/btn_record"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/rg_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_above="@+id/btn_record"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/record_speed_background"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn_extra_slow"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_speed_button_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="极慢"
+            android:textColor="@drawable/record_speed_button_text" />
+
+        <RadioButton
+            android:id="@+id/btn_slow"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_speed_button_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="慢"
+            android:textColor="@drawable/record_speed_button_text" />
+
+        <RadioButton
+            android:id="@+id/btn_normal"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_speed_button_background"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="标准"
+            android:textColor="@drawable/record_speed_button_text" />
+
+        <RadioButton
+            android:id="@+id/btn_fast"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_speed_button_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="快"
+            android:textColor="@drawable/record_speed_button_text" />
+
+        <RadioButton
+            android:id="@+id/btn_extra_fast"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/record_speed_button_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="极快"
+            android:textColor="@drawable/record_speed_button_text" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="长按录制"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cameraView"
+        app:layout_constraintStart_toStartOf="@+id/cameraView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
